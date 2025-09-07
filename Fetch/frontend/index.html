@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js">
+    </script>
+    <title>Twitter</title>
+</head>
+<body>
+    <h1>Hello Bhanu this side</h1>
+    <div id="posts"></div>
+    <script>
+        let response;
+       async function fetching() {
+             response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+             console.log(response.data);
+             response = response.data;
+             document.getElementById('posts').innerHTML = response.userId; 
+        }
+
+        fetching();
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
+    <script>
+         
+       async function fun(){
+            const res = await axios.post('http://localhost:3000/Add',{
+                "a" : document.getElementById('in1').value,
+                "b" : document.getElementById('in2').value
+            })
+            console.log(res.data.result);
+
+            alert("result:"+res.data.result);
+         }
+
+    </script>
+    <title>CORS</title>
+</head>
+<body>
+    <input id="in1" type="number" placeholder="Enter a">
+    <input id="in2" type="number" placeholder="Enter b">
+    <button id="btn" onclick="fun()">Submit</button>
+</body>
+</html>
