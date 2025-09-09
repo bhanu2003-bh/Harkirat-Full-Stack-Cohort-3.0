@@ -3,6 +3,7 @@ const app = express()
 const port = 3001
 
 app.get('/', (req, res) =>{
+
      res.json({
         "Message" : "Success"
      })
